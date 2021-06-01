@@ -51,6 +51,9 @@ fun Application.module(testing: Boolean = false) {
 
     routing {
         get("/") {
+
+            val c = TestClass().run(environment.config.propertyOrNull("anbima.apiClientId"))
+
             call.respondText("HELLO WORLD!", contentType = ContentType.Text.Plain)
         }
 
